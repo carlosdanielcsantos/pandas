@@ -424,12 +424,7 @@ parse_date = _date_parser.parse
 
 
 # In Python 3.7, the private re._pattern_type is removed.
-# Python 3.5+ have typing.re.Pattern
-if PY35:
-    import typing
-    re_type = typing.re.Pattern
-else:
-    re_type = type(re.compile(''))
+re_type = type(re.compile(''))
 
 # https://github.com/pandas-dev/pandas/pull/9123
 def is_platform_little_endian():
